@@ -1,0 +1,7 @@
+service包用于保存系统中的业务处理类
+dao包用于保存系统中的数据处理类
+entity包用于保存和数据库相对应的实体类
+web包下有两个子包，即backend和pre。分别用于保存后台和前台的servlet
+utils包用于保存一些工具类,其中包括数据库管理国国辅助类DataSourceUtil,缓存
+      Memcached管理辅助类MemcachedUtils,以及数据的加密处理类SecurityUtils等
+filter包用于保存系统中要用的Filter类,包括控制字符编码的Filter和控制登录权限的FIlter.

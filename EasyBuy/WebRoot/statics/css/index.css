@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+/*顶部导航*/
+.site-nav{width:100%;min-width:1200px;height:37px;background-color:#f6f6f6;}
+.site-nav .top {width: 1200px; height: 35px;  line-height: 35px;   margin:0px auto;}
+/*顶部左侧内容*/
+.site-nav-bd-l{float:left;width:213px;height:35px;color:#3C3C3C;}
+.site-nav-bd-l .site-nav-mobile{width:79px;}
+.site-nav-bd-l .h{color:#F40!important;}
+
+/*顶部右侧内容*/
+.site-nav-bd-r{float:right;width:480px;}
+.site-nav-bd-r ul li {list-style:none;float:left;padding:0px 8px;}
+
+/*图片和搜索*/
+.site-nav-top-wrap{width:1200px;height:120px;vertical-align: middle;margin:0px auto; padding:0px;}
+
+.site-nav-top-wrap .logo{float:left;width:200px;height:110px;text-align: center; line-height:100px;}
+.site-nav-top-wrap .search{float:left;}
+
+
+.search-bd .search-triggers .selected { color: #FFF;  font-weight: 700;  background-color: #FF5400;}
+
+.search-bd .search-triggers li { color: #F40;  text-align: center;  float: left;   width: 50px;   height: 25px;   line-height: 25px;  cursor: pointer;}

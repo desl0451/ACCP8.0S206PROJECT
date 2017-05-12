@@ -1,77 +1,109 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"  pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <script type="text/javascript">
-  var contextPath = "${ctx}";
+	var contextPath = "${ctx}";
 </script>
-<div class="soubg">
-  <div class="sou">
-    <!--Begin 所在收货地区 Begin-->
-    <span>
-		<a href="" target="_top" class="h">亲，请登录</a>&nbsp;&nbsp;&nbsp;
-		<a href="" target="_top">免费注册</a>&nbsp;&nbsp;&nbsp;
-	</span>
-	<span>
-		<a href="" target="_top" >手机逛淘宝</a>
-	</span>
-    	
-        </span>
-        <!--End 所在收货地区 End-->
-        <span class="fr">
-          <c:if test="${sessionScope.loginUser==null}">
-            <span class="fl">你好，请<a href="${ctx}/Login?action=toLogin"  style="color:#ff4e00;">登录</a>&nbsp;<a href="${ctx}/Register?action=toRegister" style="color:#ff4e00;">免费注册</a>&nbsp;&nbsp;</span>
-          </c:if>
-          <c:if test="${sessionScope.loginUser!=null}">
-            <span class="fl"><a href="${ctx}/admin/user?action=index">${sessionScope.loginUser.userName}</a>&nbsp;|&nbsp;<a href="${ctx}/admin/order?action=index&userId=${sessionScope.loginUser.id}">我的订单</a>&nbsp;</span>
-          </c:if>
-           <c:if test="${sessionScope.loginUser!=null && sessionScope.loginUser.type==1}">
-            <span class="fl">|&nbsp;<a href="${ctx}/admin/product?action=index&userId=${sessionScope.loginUser.id}">后台管理</a>&nbsp;</span>
-          </c:if>
-           <c:if test="${sessionScope.loginUser!=null}">
-             <span class="fl">|&nbsp;<a href="${ctx}/Login?action=loginOut" >注销</a></span>
-          </c:if>
-        </span>
-  </div>
+<div class="site-nav">
+	<div class="top">
+		<!--Begin 登陆 Begin-->
+		<span class="site-nav-bd-l"> <a href="" target="_top" class="h">亲，请登录</a>
+			<a href="" target="_top">免费注册</a> &nbsp;&nbsp;&nbsp; <a href=""
+			target="_top" class="site-nav-mobile">手机逛淘宝</a>
+		</span> <span class="site-nav-bd-r">
+			<ul>
+				<li>我的淘宝</li>
+				<li>购物车</li>
+				<li>收藏夹</li>
+				<li>商品分类|</li>
+				<li>卖家中心</li>
+				<li>联系客服</li>
+				<li>网站导航</li>
+			</ul>
+		</span>
+	</div>
+	<div class="site-nav-top-wrap">
+		<div class="logo">
+			<img alt="" src="${ctx}/statics/images/index/logo.png">
+		</div>
+		<div class="search-bd">
+			<div id="J_SearchTab" class="search-triggers">
+				<ul class="ks-switchable-nav">
+					<li class="selected">宝贝</li>
+					<li class="tmall-search-tab">天猫</li>
+					<li class="shop-search-tab">店铺</li>
+				</ul>
+				<div class="search-tab-icon">
+					<i><em></em><span></span></i>
+				</div>
+			</div>
+			<div class="search">
+				<form>
+					<input type="text" value="" class="s_ipt" /> <input type="submit"
+						value="搜索" class="s_btn" />
+				</form>
+				<span class="fl"><a href="#">咖啡</a><a href="#">iphone 6S</a><a
+					href="#">新鲜美食</a><a href="#">蛋糕</a><a href="#">日用品</a><a href="#">连衣裙</a></span>
+			</div>
+			<div class="i_car">
+				<div class="car_t">
+					购物车 [ <span>3</span> ]
+				</div>
+				<div class="car_bg">
+					<!--Begin 购物车未登录 Begin-->
+					<div class="un_login">
+						还未登录！<a href="Login.html" style="color:#ff4e00;">马上登录</a> 查看购物车！
+					</div>
+					<!--End 购物车未登录 End-->
+					<!--Begin 购物车已登录 Begin-->
+					<ul class="cars">
+						<li>
+							<div class="img">
+								<a href="#"><img src="images/car1.jpg" width="58"
+									height="58" /></a>
+							</div>
+							<div class="name">
+								<a href="#">法颂浪漫梦境50ML 香水女士持久清新淡香 送2ML小样3只</a>
+							</div>
+							<div class="price">
+								<font color="#ff4e00">￥399</font> X1
+							</div>
+						</li>
+						<li>
+							<div class="img">
+								<a href="#"><img src="images/car2.jpg" width="58"
+									height="58" /></a>
+							</div>
+							<div class="name">
+								<a href="#">香奈儿（Chanel）邂逅活力淡香水50ml</a>
+							</div>
+							<div class="price">
+								<font color="#ff4e00">￥399</font> X1
+							</div>
+						</li>
+						<li>
+							<div class="img">
+								<a href="#"><img src="images/car2.jpg" width="58"
+									height="58" /></a>
+							</div>
+							<div class="name">
+								<a href="#">香奈儿（Chanel）邂逅活力淡香水50ml</a>
+							</div>
+							<div class="price">
+								<font color="#ff4e00">￥399</font> X1
+							</div>
+						</li>
+					</ul>
+					<div class="price_sum">
+						共计&nbsp; <font color="#ff4e00">￥</font><span>1058</span>
+					</div>
+					<div class="price_a">
+						<a href="#">去购物车结算</a>
+					</div>
+					<!--End 购物车已登录 End-->
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-<div id="fade1" class="black_overlay"></div>
-<div id="MyDiv1" class="white_content">
-  <div class="white_d">
-    <div class="notice_t">
-      <span class="fr" style="margin-top:10px; cursor:pointer;" onclick="CloseDiv_1('MyDiv1','fade1')"><img src="${ctx}/statics/images/close.gif" /></span>
-    </div>
-    <div class="notice_c">
-      <table border="0" align="center" cellspacing="0" cellpadding="0">
-        <tr valign="top">
-          <td width="40"><img src="${ctx}/statics/images/suc.png"></td>
-          <td>
-            <span style="color:#3e3e3e; font-size:18px; font-weight:bold;" id="showMessage">操作成功</span><br />
-          </td>
-        </tr>
-      </table>
-    </div>
-  </div>
-</div>
-<link type="text/css" rel="stylesheet" href="${ctx}/statics/css/style.css"/>
-<script type="text/javascript" src="${ctx}/statics/js/common/jquery-1.11.1.min_044d0927.js"></script>
-<script type="text/javascript" src="${ctx}/statics/js/common/jquery.bxslider_e88acd1b.js"></script>
-<script type="text/javascript" src="${ctx}/statics/js/common/jquery-1.8.2.min.js"></script>
-<script type="text/javascript" src="${ctx}/statics/js/common/menu.js"></script>
-<script type="text/javascript" src="${ctx}/statics/js/common/select.js"></script>
-<script type="text/javascript" src="${ctx}/statics/js/common/lrscroll.js"></script>
-<script type="text/javascript" src="${ctx}/statics/js/common/iban.js"></script>
-<script type="text/javascript" src="${ctx}/statics/js/common/fban.js"></script>
-<script type="text/javascript" src="${ctx}/statics/js/common/f_ban.js"></script>
-<script type="text/javascript" src="${ctx}/statics/js/common/mban.js"></script>
-<script type="text/javascript" src="${ctx}/statics/js/common/bban.js"></script>
-<script type="text/javascript" src="${ctx}/statics/js/common/hban.js"></script>
-<script type="text/javascript" src="${ctx}/statics/js/common/tban.js"></script>
-<script type="text/javascript" src="${ctx}/statics/js/common/lrscroll_1.js"></script>
-
-<script type="text/javascript" src="${ctx}/statics/js/register/register.js"></script>
-<link rel="stylesheet" type="text/css" href="${ctx}/statics/css/ShopShow.css" />
-<link rel="stylesheet" type="text/css" href="${ctx}/statics/css/MagicZoom.css" />
-<script type="text/javascript" src="${ctx}/statics/js/common/MagicZoom.js"></script>
-<script type="text/javascript" src="${ctx}/statics/js/common/num.js"></script>
-<script type="text/javascript" src="${ctx}/statics/js/common/p_tab.js"></script>
-<script type="text/javascript" src="${ctx}/statics/js/common/shade.js"></script>
-

@@ -5,7 +5,6 @@ import java.util.List;
 import cn.easybuy.dao.IBaseDao;
 import cn.easybuy.entity.News;
 import cn.easybuy.param.NewsParams;
-import cn.easybuy.utils.Params;
 
 /**
  * 新闻的dao

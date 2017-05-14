@@ -1,11 +1,5 @@
 package cn.easybuy.dao;
 
-import cn.easybuy.utils.Params;
-
-import java.sql.ResultSet;
-import java.util.List;
-import java.util.Map;
-
 /**
  * Created by bdqn on 2016/4/22.
  */

@@ -1,65 +1,40 @@
 package cn.easybuy.test;
 
-import java.sql.Connection;
 import java.util.List;
 
-import cn.easybuy.dao.product.ProductDao;
-import cn.easybuy.dao.product.ProductDaoImpl;
-import cn.easybuy.dao.user.UserDaoImpl;
-import cn.easybuy.entity.Product;
-import cn.easybuy.entity.User;
-import cn.easybuy.utils.DataSourceUtil;
+import cn.easybuy.entity.News;
+import cn.easybuy.param.NewsParams;
+import cn.easybuy.service.news.NewsService;
+import cn.easybuy.service.news.NewsServiceImpl;
+import cn.easybuy.utils.Pager;
 
 public class Test {
 	public static void main(String[] args) {
-//		tianjia();
-		chaxun() ;
+		NewsDaoTest();
 	}
 
-	public static void tianjia() {
-//		Connection connection = null;
-//		try {
-//			connection = DataSourceUtil.openConnection();
-//			User user = new User();
-//			user.setEmail("desl@126.com");
-//			user.setIdentityCode("123123123");
-//			user.setLoginName("xiaobao");
-//			user.setMobile("139421347812");
-//			user.setPassword("123456");
-//			user.setSex(1);
-//			user.setType(1);
-//			user.setUserName("小宝");
-//			UserDaoImpl dao = new UserDaoImpl(connection);
-//			int id = dao.add(user);
-//			if (id > 0) {
-//				System.out.println("添加成功!");
-//			} else {
-//				System.out.println("添加失败!");
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		} finally {
-//			DataSourceUtil.closeConnection(connection);
-//		}
+	public static void NewsDaoTest() {
+		/**
+		 * 新闻添加
+		 */
+		System.out.println("1.新闻添加");
+
+		NewsService dao = new NewsServiceImpl();
+		NewsParams params = new NewsParams();
+		Pager pager = new Pager(5, 5, 1);
+		try {
+			List<News> ulist = dao.queryNewsList(params);
+			for (News news : ulist) {
+				System.out.println(news.getTitle());
+				System.out.println(news.getContent());
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public static void chaxun() {
-		Connection connection = null;
-		List<Product> productList = null;
-		try {
 
-			connection = DataSourceUtil.openConnection();
-			ProductDao productDao = new ProductDaoImpl(connection);
-			int currentPageNo = 1;
-			int pageSize = 5;
-			productList = productDao.getProductList(currentPageNo, pageSize, null, null, null);
-			for (Product product : productList) {
-				System.out.println(product.getName() + "" + product.getFileName());
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			DataSourceUtil.closeConnection(connection);
-		}
 	}
 }

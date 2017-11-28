@@ -24,7 +24,7 @@ CREATE TABLE `easybuy_news` (
   `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `title` varchar(40) NOT NULL COMMENT '标题',
   `content` varchar(1000) NOT NULL COMMENT '内容',
-  `createTime` varchar(10) NOT NULL COMMENT '创建时间',
+  `createTime` date NOT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `PK__EASYBUY___C63B5EE724927208` (`id`),
   UNIQUE KEY `UQ__EASYBUY___C12AD09D276EDEB3` (`title`)

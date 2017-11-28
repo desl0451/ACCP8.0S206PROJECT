@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"  pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
+<c:set var="ctx" value="${pageContext.request.contextPath}" />
+<script type="text/javascript">
+  var contextPath = "${ctx}";
+</script>
 <div class="soubg">
  	<div class="sou">
     	<!--Begin 所在收货地区 Begin-->
@@ -82,13 +85,22 @@
         <!-- 上左边栏 -->
         <span>
         	<span class="fl">
-        		<a href="Login.jsp"  style="color:#ff4e00;cursor:hand;">亲,请登录</a>&nbsp; 
-        		<a href="Regist.jsp">免费注册</a>&nbsp;&nbsp;
-        		<a href="#">手机逛淘宝</a>&nbsp;</span>
+	          <c:if test="${sessionScope.loginUser==null}">
+	            <span class="fl"><a href="${ctx}/Login?action=toLogin"  style="color:#ff4e00;">亲，请登录</a>&nbsp;<a href="${ctx}/Register?action=toRegister">免费注册</a>&nbsp;&nbsp;<a href="${ctx}/Register?action=toRegister">手机逛淘宝</a></span>
+	          </c:if>
+	          <c:if test="${sessionScope.loginUser!=null}">
+	            <span class="fl"><a href="${ctx}/admin/user?action=index">${sessionScope.loginUser.userName}</a>&nbsp;|&nbsp;<a href="${ctx}/admin/order?action=index&userId=${sessionScope.loginUser.id}">我的订单</a>&nbsp;</span>
+	          </c:if>
+	           <c:if test="${sessionScope.loginUser!=null && sessionScope.loginUser.type==1}">
+	            <span class="fl">|&nbsp;<a href="${ctx}/admin/product?action=index&userId=${sessionScope.loginUser.id}">后台管理</a>&nbsp;</span>
+	          </c:if>
+	           <c:if test="${sessionScope.loginUser!=null}">
+	             <span class="fl">|&nbsp;<a href="${ctx}/Login?action=loginOut" >注销</a></span>
+	          </c:if>
+	        </span>
         </span>
         <!--End 所在收货地区 End-->
         <span class="fr">
-        	
         	<span class="ss">
         		<div class="ss_list">
                 	<a href="#">我的淘宝</a>

@@ -75,7 +75,7 @@
 </div>
 <div class="btmbg">
   <div class="btm">
-    备案/许可证编号：蜀ICP备12009302号-1-www.dingguagua.com   Copyright © 2015-2018 尤洪商城网 All Rights Reserved. 复制必究 , Technical Support: Dgg Group <br />
+    备案/许可证编号：蜀ICP备8888888号-1-www.xiaobao.com   Copyright © 2018-2030 小宝商城网 All Rights Reserved. 复制必究 , Technical Support:小宝工作室<br />
     <img src="${ctx}/statics/images/b_1.gif" width="98" height="33" /><img src="${ctx}/statics/images/b_2.gif" width="98" height="33" /><img src="${ctx}/statics/images/b_3.gif" width="98" height="33" /><img src="${ctx}/statics/images/b_4.gif" width="98" height="33" /><img src="${ctx}/statics/images/b_5.gif" width="98" height="33" /><img src="${ctx}/statics/images/b_6.gif" width="98" height="33" />
   </div>
 </div>
